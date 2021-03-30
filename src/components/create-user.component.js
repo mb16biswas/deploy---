@@ -28,7 +28,7 @@ export default class CreateUser extends Component {
 
     console.log(user);
 
-    axios.post('https://gym-tracker-back.herokuapp.com/users/add', user)
+    axios.post(`${process.env.REACT_APP_BACKEND_URL}users/add`, user)
       .then(res => console.log(res.data));
 
     this.setState({
