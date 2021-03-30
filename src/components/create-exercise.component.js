@@ -23,7 +23,7 @@ export default class CreateExercise extends Component {
   }
 
   componentDidMount() {
-    axios.get('https://gym-tracker-back.herokuapp.com/users/')
+    axios.get(`${process.env.REACT_APP_BACKEND_URL}users/`)
       .then(response => {
         if (response.data.length > 0) {
           this.setState({
@@ -74,7 +74,7 @@ export default class CreateExercise extends Component {
 
     console.log(exercise);
 
-    axios.post('https://gym-tracker-back.herokuapp.com/exercises/add', exercise)
+    axios.post(`${process.env.REACT_APP_BACKEND_URL}exercises/add`, exercise)
       .then(res => console.log(res.data));
 
     window.location = '/';
